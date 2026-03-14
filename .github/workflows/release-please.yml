@@ -12,6 +12,9 @@ jobs:
   release:
     name: Release Please
     runs-on: ubuntu-latest
+    env:
+      # Forzamos el uso de Node.js 24 para evitar el aviso de deprecación
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
 
     steps:
       - name: Run Release Please
@@ -21,7 +24,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           release-type: node
 
-      # Deploy only when a real release is created (tag was pushed)
+      # Solo se ejecuta el despliegue cuando se crea una versión real (tag)
       - name: Checkout (on release)
         if: ${{ steps.release.outputs.release_created }}
         uses: actions/checkout@v4
@@ -30,7 +33,7 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24 # Actualizado de 20 a 24 para máxima velocidad
           cache: npm
 
       - name: Install & Build (on release)

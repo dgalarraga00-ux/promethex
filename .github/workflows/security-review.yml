@@ -1,0 +1,33 @@
+name: Security Review
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  security:
+    name: Claude Code Security Review
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run Security Review
+        uses: anthropics/claude-code-action@beta
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          task: |
+            Review this pull request for security vulnerabilities. Focus on:
+            - XSS, injection attacks, or unsafe HTML rendering
+            - Exposed secrets, API keys, or sensitive data in code
+            - Insecure dependencies or supply chain risks
+            - Unsafe use of user-controlled input
+            - Missing security headers or misconfigured CORS
+            - Open redirect vulnerabilities in link hrefs
+            Report findings as inline PR comments with severity (critical/high/medium/low) and recommended fix.
+            If no issues are found, leave a brief approval comment.

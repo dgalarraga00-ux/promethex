@@ -1,5 +1,5 @@
 {
-  "name": "promethex-temp",
+  "name": "promethex-landing",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,10 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@next/third-parties": "^16.1.6",
+    "@typebot.io/react": "^0.9.20",
+    "framer-motion": "^12.36.0",
+    "lucide-react": "^0.577.0",
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3"

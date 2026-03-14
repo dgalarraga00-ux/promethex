@@ -12,6 +12,8 @@ import FAQ from '@/components/sections/FAQ'
 import Footer from '@/components/sections/Footer'
 import AIAssistant from '@/components/ui/AIAssistant'
 
+// Smoke test: Validando el flujo de seguridad de Promethex.
+
 export default function Home() {
   return (
     <main>

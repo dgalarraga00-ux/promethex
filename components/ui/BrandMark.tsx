@@ -17,8 +17,8 @@ const sizeMap = {
     slogan: 'text-[10px] md:text-xs',
   },
   xl: {
-    text: 'text-6xl md:text-7xl lg:text-8xl',
-    slogan: 'text-xs md:text-sm',
+    text: 'text-4xl sm:text-6xl md:text-7xl lg:text-8xl',
+    slogan: 'text-[9px] sm:text-xs md:text-sm',
   },
 }
 
@@ -31,7 +31,7 @@ export default function BrandMark({ size = 'lg', showSlogan = true }: BrandMarkP
       <div className="flex items-center gap-2 md:gap-3">
         {/* Name: same font size class drives both text and slash box via em units */}
         <span
-          className={`${s.text} font-black tracking-widest uppercase leading-none`}
+          className={`${s.text} font-black tracking-wide sm:tracking-widest uppercase leading-none`}
           style={fontStyle}
         >
           <span className="text-white">PROMETHE</span>

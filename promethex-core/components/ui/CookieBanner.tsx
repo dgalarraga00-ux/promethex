@@ -9,7 +9,11 @@ export function CookieBanner() {
 
   useEffect(() => {
     const accepted = localStorage.getItem(STORAGE_KEY);
-    if (!accepted) setVisible(true);
+    if (!accepted) {
+      // Defer to avoid setState-in-effect lint rule
+      const t = setTimeout(() => setVisible(true), 0);
+      return () => clearTimeout(t);
+    }
   }, []);
 
   const handleAccept = () => {

@@ -1,33 +1,70 @@
-import SplashScreen from '@/components/ui/SplashScreen'
-import { Hero } from '@/components/sections/Hero'
-import { EliteStack } from '@/components/sections/EliteStack'
-import ServicesGrid from '@/components/sections/ServicesGrid'
-import Consultation from '@/components/sections/Consultation'
-import { Pricing } from '@/components/sections/Pricing'
-import { IAReady } from '@/components/sections/IAReady'
-import { Portfolio } from '@/components/sections/Portfolio'
-import { WhyUs } from '@/components/sections/WhyUs'
-import { Contact } from '@/components/sections/Contact'
-import FAQ from '@/components/sections/FAQ'
-import Footer from '@/components/sections/Footer'
-import AIAssistant from '@/components/ui/AIAssistant'
+'use client';
 
-export default function Home() {
+import React from 'react';
+import {
+  FloatingNavbar,
+  HeroMaster,
+  BentoServices,
+  PricingMaster,
+  ContactMaster,
+  FooterMaster,
+  CookieBanner,
+} from '@promethex/core';
+
+const NAV_LINKS = [
+  { label: 'Inicio', path: '#hero' },
+  { label: 'Servicios', path: '#servicios' },
+  { label: 'Precios', path: '#precios' },
+  { label: 'Contacto', path: '#contacto' },
+];
+
+const SECTION_IDS = ['hero', 'servicios', 'precios', 'contacto'];
+
+export default function HomePage() {
+  const handleNavigate = (path: string) => {
+    const id = path.replace('#', '');
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <main>
-      <SplashScreen />
-      <Hero />
-      <EliteStack />
-      <ServicesGrid />
-      <Consultation />
-      <Pricing />
-      <IAReady />
-      <Portfolio />
-      <WhyUs />
-      <Contact />
-      <FAQ />
-      <Footer />
-      <AIAssistant />
-    </main>
-  )
+    <>
+      <style>{`body > header { display: none !important; }`}</style>
+      <main className="bg-[#05050f] text-white font-montserrat min-h-screen">
+        <FloatingNavbar
+          links={NAV_LINKS}
+          onNavigate={handleNavigate}
+          sectionIds={SECTION_IDS}
+          ctaLink={{ label: 'Iniciar Proyecto', path: '#contacto' }}
+        />
+
+        <section id="hero">
+          <HeroMaster
+            onPrimary={() => handleNavigate('#contacto')}
+            onSecondary={() => handleNavigate('#servicios')}
+          />
+        </section>
+
+        <section id="servicios">
+          <BentoServices />
+        </section>
+
+        <section id="precios">
+          <PricingMaster
+            onSelectStarter={() => handleNavigate('#contacto')}
+            onSelectBusiness={() => handleNavigate('#contacto')}
+            onSelectElite={() => handleNavigate('#contacto')}
+          />
+        </section>
+
+        <section id="contacto">
+          <ContactMaster
+            onSubmit={(data) => console.log('Form submitted:', data)}
+          />
+        </section>
+
+        <FooterMaster onNavigate={handleNavigate} />
+      </main>
+      <CookieBanner />
+    </>
+  );
 }

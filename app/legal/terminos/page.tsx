@@ -24,7 +24,7 @@ export default function TerminosPage() {
 
             <section>
               <h2 className="text-lg font-montserrat font-bold text-white mb-3">1. Aceptación de los Términos</h2>
-              <p>Al contratar los servicios de Promethex ("la Agencia", "nosotros"), usted ("el Cliente") acepta quedar vinculado por los presentes Términos y Condiciones. Si no está de acuerdo con alguna parte de estos términos, le rogamos que no utilice nuestros servicios.</p>
+              <p>{'Al contratar los servicios de Promethex ("la Agencia", "nosotros"), usted ("el Cliente") acepta quedar vinculado por los presentes Términos y Condiciones. Si no está de acuerdo con alguna parte de estos términos, le rogamos que no utilice nuestros servicios.'}</p>
             </section>
 
             <section>

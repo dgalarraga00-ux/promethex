@@ -1,0 +1,28 @@
+@import './theme.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes rippling {
+  0% { opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@layer base {
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #05050f;
+    color: #f0f0f8;
+  }
+}

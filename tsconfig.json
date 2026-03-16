@@ -19,7 +19,9 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@promethex/core": ["./promethex-core/index.ts"],
+      "@promethex/core/*": ["./promethex-core/*"]
     }
   },
   "include": [

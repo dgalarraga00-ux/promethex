@@ -1,0 +1,17 @@
+:root {
+  --navbar-bg: rgba(10, 10, 20, 0.75);
+  --navbar-border: rgba(255, 255, 255, 0.08);
+  --navbar-glow: 0 8px 48px rgba(226, 176, 179, 0.45), 0 0 0 1px rgba(226, 176, 179, 0.35);
+  --navbar-glow-idle: 0 2px 16px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  --navbar-text: #f0f0f8;
+  --navbar-text-muted: rgba(240, 240, 248, 0.45);
+  --navbar-contact-bg: #E2B0B3;
+  --navbar-contact-text: #1a0a0b;
+  --navbar-overlay-bg: rgba(5, 5, 15, 0.97);
+  --navbar-palette-bg: rgba(15, 15, 30, 0.98);
+  --promethex-bg: #05050f;
+  --promethex-accent: #E2E8F0;
+  --promethex-cta: #E2B0B3;
+  --bento-card: rgba(255, 255, 255, 0.05);
+  --pricing-card: rgba(255, 255, 255, 0.04);
+}

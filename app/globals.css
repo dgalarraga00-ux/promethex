@@ -14,6 +14,11 @@
   --color-brand-raw: #6F3F48;
   --color-text: #FFFFFF;
   --color-accent-raw: #E2B0B3;
+  --promethex-bg: #05050f;
+  --promethex-cta: #E2B0B3;
+  --promethex-accent: #E2E8F0;
+  --pricing-card: rgba(255, 255, 255, 0.04);
+  --bento-card: rgba(255, 255, 255, 0.05);
 }
 
 @layer base {
@@ -73,4 +78,24 @@
       5% 30%
     );
   }
+}
+
+@keyframes rippling {
+  0% { opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
 }

@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.1](https://github.com/dgalarraga00-ux/promethex/compare/v1.1.0...v1.1.1) (2026-03-16)
+
+
+### Bug Fixes
+
+* exclude promethex-core/preview from TypeScript compilation ([807a886](https://github.com/dgalarraga00-ux/promethex/commit/807a88652969a571d081936cf0fea5e60ef5606d))
+* exclude promethex-core/preview from TypeScript compilation ([6b19795](https://github.com/dgalarraga00-ux/promethex/commit/6b197950397070230841bcebce7397f616be9e65))
+
 ## [1.1.0](https://github.com/dgalarraga00-ux/promethex/compare/v1.0.1...v1.1.0) (2026-03-16)
 
 
